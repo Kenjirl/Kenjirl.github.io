@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/5b8fa639bb.js" crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Glass+Antiqua&family=Indie+Flower&family=Macondo&family=Quicksand&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <title>Portfolio</title>
+</head>
+<body class="relative bg-cst-cream text-cst-black max-w-[2000px] mx-auto bg-[url('/img/dust-2.png')]">
+    <header class="relative w-full max-w-[2000px] p-4 font-macondo font-semibold border-b-2 border-cst-black z-10 transition-all header">
+        <nav class="w-full flex items-center justify-center gap-2 md:gap-8" 
+            id="navLinks"></nav>
+    </header>
+
+    <!-- Home/Introduce/Lore -->
+    <section class="w-full max-h-[1200px] pt-8 md:p-8 md:pr-0 flex flex-col md:flex-row items-start lg:items-center justify-center gap-16 md:gap-8 font-macondo section"
+        id="lore">
+        <div class="flex-1 px-4 md:px-0">
+            <div class="w-full mx-auto">
+                <h1 class="w-full text-center mb-8 font-bold text-xl md:text-3xl lg:text-5xl">
+                    My Lore to Web Development</h1>
+
+                <div class="w-full h-[30ch] md:h-[20ch] mb-2 carousel-content text-justify text-base lg:text-2xl" id="carouselContent"></div>
+
+                <div class="w-full flex items-center justify-between gap-2 md:gap-8">
+                    <div class="flex-1 w-full">
+                        <button class="w-[40px] md:w-[50px] aspect-square mx-auto flex items-center justify-center bg-cst-black md:text-2xl text-cst-cream shadow-up-black border-[3px] border-cst-cream rounded prev-btn
+                            hover:bg-cst-cream hover:text-cst-black hover:border-cst-black
+                            focus:bg-cst-cream focus:text-cst-black focus:border-cst-black
+                            active:translate-y-[8px] active:shadow-down-black
+                            transition-all">
+                            <i class="fa-solid fa-angle-left"></i>
+                        </button>
+                    </div>
+
+                    <div class="flex-1 w-full flex items-center justify-center gap-2 md:gap-8" 
+                        id="dotsContainer"></div>
+
+                    <div class="flex-1 w-full">
+                        <button class="w-[40px] md:w-[50px] aspect-square mx-auto flex items-center justify-center bg-cst-black md:text-2xl text-cst-cream shadow-up-black border-[3px] border-cst-cream rounded next-btn
+                            hover:bg-cst-cream hover:text-cst-black hover:border-cst-black
+                            focus:bg-cst-cream focus:text-cst-black focus:border-cst-black
+                            active:translate-y-[8px] active:shadow-down-black
+                            transition-all">
+                            <i class="fa-solid fa-angle-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="lg:flex-1 w-full md:pl-0 md:w-1/3 lg:w-full pt-4 bg-cst-black md:rounded-s-3xl">
+            <div class="relative w-full">
+                <img class="h-[70vh] md:h-[40vh] lg:h-[65vh] max-h-[500px] object-contain mx-auto"
+                    src="../img/saya-1.png" alt="Me">
+                <span class="absolute bottom-0 left-0 w-full pb-1 text-center text-lg lg:text-3xl rounded-bl-3xl uppercase text-cst-cream bg-cst-black"
+                    >Benedict Kenjiro Lehot</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About/Skills/Expertise/Abilities -->
+    <section class="relative w-full px-4 py-8 md:p-8 font-macondo section"
+        id="abilities">
+        <h2 class="w-full text-center mb-2 md:mb-8 font-bold text-xl md:text-3xl lg:text-4xl uppercase">
+            ABILITIES</h2>
+
+        <div class="w-full max-w-[600px] lg:max-w-[1200px] mx-auto mb-16 grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Basic -->
+            <div class="w-full" id="basic">
+                <span class="block w-full mb-2 md:mb-8 text-center uppercase text-lg md:text-2xl lg:text-3xl">
+                    BASIC</span>
+
+                <!-- Content from skills/basics.js -->
+            </div>
+
+            <!-- Library/Framework -->
+            <div class="w-full" id="special">
+                <span class="block w-full mb-2 md:mb-8 text-center uppercase text-lg md:text-2xl lg:text-3xl">
+                    SPECIAL</span>
+
+                <!-- Content from skills/specials.js -->
+            </div>
+
+            <!-- Additional -->
+            <div class="w-full" id="additional">
+                <span class="block w-full mb-2 md:mb-8 text-center uppercase text-lg md:text-2xl lg:text-3xl">
+                    ADDITIONAL</span>
+
+                <!-- Content from skills/additionals.js -->
+            </div>
+        </div>
+
+        <!-- Squares Atribute -->
+        <div class="absolute bottom-0 left-0 w-[20%] lg:w-[12%] grid grid-cols-5" 
+            id="squareSkill"></div>
+    </section>
+
+    <!-- Portofolio/Quests -->
+    <section class="relative w-full py-16 px-4 md:p-16 bg-cst-black text-cst-cream font-macondo"
+        id="quests">
+        <h2 class="w-full text-center mb-2 md:mb-4 lg:mb-8 font-bold text-xl md:text-3xl lg:text-4xl uppercase">
+            QUESTS</h2>
+
+        <div class="w-full px-4 mb-4 lg:hidden text-end">
+            <button type="button" id="openQuestButtonsContainer" tabindex="-1">
+                List Quests
+            </button>
+        </div>
+
+        <div class="relative w-full max-w-[1200px] mx-auto flex items-start justify-center gap-8">
+            <div class="fixed top-0 -right-[100%] w-full h-screen py-24 px-8 bg-cst-black bg-[url('/img/dust-2.png')]
+                lg:relative lg:-right-0 lg:h-fit lg:max-h-[75vh] lg:flex-1 lg:p-2 lg:bg-transparent lg:bg-none
+                overflow-y-scroll z-30 transition-all ease-linear duration-500"
+                id="questListContainer">
+
+                <div class="lg:hidden absolute top-7 left-0 w-full text-center">
+                    <button class="py-1 px-5 bg-cst-cream text-cst-black rounded-full"
+                        id="closeQuestButtonsContainer" tabindex="-1">
+                        close
+                    </button>
+                </div>
+
+                <div class="w-full grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4"
+                    id="questButtonsContainer">
+
+                    <!-- Dibuat pada js/quests.js -->
+                </div>
+            </div>
+
+            <div class="flex-1 w-full p-1 md:p-2 rounded-lg bg-cst-cream text-cst-black"
+                id="questDetailContainer">
+                <img class="w-full aspect-video object-center rounded-sm md:rounded"
+                    src="../img/portfolio/1.png" alt="Quest 1" id="questImage">
+
+                <div class="relative w-full px-2 md:px-4 py-2 mb-2 text-sm md:text-base">
+                    <span class="font-bold text-2xl" id="questTitle">
+                        Ruteng
+                    </span>
+                    <p class="w-full my-2 indent-4 text-justify" id="questStory">
+                        Tugas Akhir Membuat Website sebagai syarat kelulusan kelas Belajar Dasar Pemrograman JavaScript di Dicoding. Saya memilih topik mengenai kota kelahiran saya. 
+                    </p>
+                    <div class="w-full grid grid-cols-1 md:grid-cols-2 items-start gap-4">
+                        <div class="w-full">
+                            <p class="font-semibold" id="questNumber">
+                                #1
+                            </p>
+                            <p id="questDifficulty">
+                                Difficulty : Novice
+                            </p>
+                            <div>
+                                <p>Missions :</p>
+                                <ul class="list-disc w-full pl-4" id="questMission">
+                                    <li>Membuat web dengan menerapkan konsep semantik</li>
+                                    <li>Menampilkan identitas diri secara float pada aside</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div>
+                            <p>
+                                <b class="text-lg">
+                                    Quest Complete 
+                                </b> <br>
+                                Exp. gained : +<span id="questExp">100</span> <br>
+                                Last saved : <span id="questLastSaved">2022</span>
+                            </p>
+                        </div>
+
+                        <a class="absolute bottom-2 right-2 md:bottom-4 md:right-4 w-fit px-2 md:text-lg text-center font-semibold -rotate-12 rounded outline-none
+                            hover:bg-cst-black hover:text-cst-cream hover:rotate-0
+                            focus:bg-cst-black focus:text-cst-cream focus:rotate-0
+                            transition-all"
+                            href="https://kenjirl.github.io/halaman-profil-Ruteng/" target="_blank" id="questUrl">
+                            Load <br>Checkpoint
+                        </a>
+                    </div>
+                </div>
+
+                <div class="w-full flex items-end justify-center gap-1 text-cst-cream">
+                    <div class="flex-1">
+                        <button class="w-full p-1 bg-cst-black rounded-sm rounded-bl-lg"
+                            id="questPrevButton">
+                            Prev</button>
+                    </div>
+                    <div class="flex-1">
+                        <button class="w-full p-1 bg-cst-black rounded-sm rounded-br-lg"
+                            id="questNextButton" data-id="1">
+                            Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Squares Atribute -->
+        <div class="absolute top-0 left-0 w-[20%] lg:w-[12%] grid grid-cols-5" 
+            id="squarePortfolio"></div>
+    </section>
+
+    <!-- Contact/Summon Me -->
+    <section class="w-full max-w-[1200px] py-16 mx-auto flex flex-col items-center justify-center gap-4 font-macondo section"
+        id="summon">
+        <h2 class="w-full text-center mb-8 font-bold text-xl md:text-3xl lg:text-4xl uppercase">
+            SUMMON ME</h2>
+
+        <div class="w-full px-8 md:px-0 flex flex-col-reverse lg:flex-row items-center justify-center gap-16">
+            <div class="flex-1 w-full max-w-[400px] lg:max-w-[600px] mx-auto">
+                <form class="w-full mx-auto" 
+                    action="#" method="post">
+                    <div class="hidden w-full mb-4 lg:flex flex-col gap-2">
+                        <label class="w-full font-semibold"
+                            for="name">Name</label>
+                        <input class="w-full rounded p-2 border-2 border-cst-black bg-transparent focus:bg-cst-cream outline-none transition-colors"
+                            type="text" id="name" name="name">
+                    </div>
+
+                    <div class="hidden w-full mb-4 lg:flex flex-col gap-2">
+                        <label class="w-full font-semibold"
+                            for="message">Message</label>
+                        <textarea class="w-full rounded p-2 border-2 border-cst-black bg-transparent focus:bg-cst-cream outline-none transition-colors text-justify resize-none"
+                            name="message" id="message" rows="5"></textarea>
+                    </div>
+
+                    <button class="w-full p-2 rounded bg-cst-black text-cst-cream border-2 border-cst-black font-semibold outline-none
+                        hover:bg-transparent hover:text-cst-black
+                        focus:bg-transparent focus:text-cst-black
+                        active:bg-cst-black active:text-cst-cream
+                        transition-all"
+                        type="button" id="summonButton">Summon</button>
+                </form>
+            </div>
+
+            <div class="flex-1 w-full max-w-[400px] lg:max-w-[600px] mx-auto">
+                <div class="w-full grid grid-cols-8"
+                    id="squareSummon"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="relative w-full p-4 text-xs md:text-base text-center bg-cst-black bg-[url('/img/dust-2.png')] text-cst-cream font-macondo font-extrabold overflow-hidden">
+        <p>My Lore to Web Development</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="./js/nav.js"></script>
+    <script src="./js/lore.js"></script>
+    <script src="./js/skills/basics.js"></script>
+    <script src="./js/skills/specials.js"></script>
+    <script src="./js/skills/additionals.js"></script>
+    <script src="./js/quests.js"></script>
+    <script src="./js/summon.js"></script>
+    <script src="./js/squares.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+</html>
