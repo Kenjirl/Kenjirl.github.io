@@ -33,6 +33,14 @@ $(document).ready(function() {
             icon: 'discord',
             url: 'https://www.discordapp.com/users/Kencong#7353',
         },
+        {
+            icon: 'x-twitter',
+            url: 'https://twitter.com/kencongun',
+        },
+        {
+            icon: 'telegram',
+            url: 'https://t.me/Kencoong',
+        },
     ];
 
     let k = 0;
@@ -59,7 +67,7 @@ $(document).ready(function() {
             $('#squareSummon').append(square);
             index++;
             k++;
-            if (k > 3) {
+            if (k > 5) {
                 k = 0;
             }
         }

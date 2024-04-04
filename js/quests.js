@@ -86,7 +86,7 @@ $(document).ready(function() {
 	quests.forEach(function(quest, index) {
 		$('#questButtonsContainer').append(`
 			<div>
-				<button class="relative w-full aspect-square mx-auto mb-4 last:mb-0 rounded-xl bg-cst-black border-[3px] border-cst-cream shadow-down-cream outline-none
+				<button class="relative w-full aspect-square mx-auto mb-4 last:mb-0 rounded bg-cst-black border-[3px] border-cst-cream shadow-down-cream outline-none
 					hover:bg-cst-cream hover:border-cst-black hover:shadow-up-cream hover:-translate-y-2 hover:text-cst-black 
 					focus:bg-cst-cream focus:border-cst-black focus:shadow-up-cream focus:-translate-y-2 focus:text-cst-black 
 					active:shadow-down-cream active:-translate-y-0 
