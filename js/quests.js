@@ -81,6 +81,17 @@ $(document).ready(function() {
 			lastSaved: 2022,
 			url: 'https://2001kevin.github.io'
 		},
+		{
+			title: 'Digital Wedding Invitation',
+			detail: 'Project ini merupakan pekerjaan berbayar pertama yang saya dapatkan. Project ini bertujuan untuk membuat undangan pernikahan yang nantinya akan dibagikan kepada tamu undangan. Pengelolaan tamu undangan dapat dilakukan dari sisi admin. ',
+			missions: [
+				'Mendesain undangan pernikahan',
+				'Membuat back-end untuk mengelola tamu undangan'
+			],
+			exp: 1000,
+			lastSaved: 2023,
+			url: 'https://2001kevin.github.io/undangan_leonardo_vania/'
+		},
 	];
 
 	quests.forEach(function(quest, index) {
