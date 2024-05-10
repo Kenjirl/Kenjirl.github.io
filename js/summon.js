@@ -23,7 +23,7 @@ $(document).ready(function() {
         },
         {
             icon: 'linkedin',
-            url: 'https://www.linkedin.com/in/benedict-kenjiro-lehot-558325251/',
+            url: 'https://www.linkedin.com/in/kencong/',
         },
         {
             icon: 'instagram',
