@@ -19,7 +19,7 @@ $(document).ready(function() {
     const summons = [
         {
             icon: 'github',
-            url: 'https://www.instagram.com/kenjirl_/',
+            url: 'https://github.com/Kenjirl',
         },
         {
             icon: 'linkedin',
