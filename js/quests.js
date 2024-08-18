@@ -92,6 +92,16 @@ $(document).ready(function() {
 			lastSaved: 2023,
 			url: 'https://2001kevin.github.io/undangan_leonardo_vania/'
 		},
+		{
+			title: 'Random Rates',
+			detail: 'Sistem penilaian personal. Saya membuat ini dengan tujuan untuk mencatat penilaian Saya terhadap suatu produk yang Saya coba.',
+			missions: [
+				'Menampilkan penilaian terhadap suatu produk yang dicoba',
+			],
+			exp: 500,
+			lastSaved: 2024,
+			url: 'https://kenjirl.github.io/random-rate/'
+		},
 	];
 
 	quests.forEach(function(quest, index) {
