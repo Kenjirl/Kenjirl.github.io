@@ -102,6 +102,18 @@ $(document).ready(function() {
 			lastSaved: 2024,
 			url: 'https://kenjirl.github.io/random-rate/'
 		},
+		{
+			title: 'Endless Tic-Tac-Toe',
+			detail: 'Permainan Tic-Tac-Toe tanpa akhir! Terus bermain hingga mendapatkan pemenangnya.',
+			missions: [
+				'Permainan Tic-Tac-Toe',
+				'Tanpa akhir (hingga mendapatkan pemenang)',
+				'Menggunakan input keyboard',
+			],
+			exp: 200,
+			lastSaved: 2024,
+			url: 'https://kenjirl.github.io/endless-tic-tac-toe/'
+		},
 	];
 
 	quests.forEach(function(quest, index) {
