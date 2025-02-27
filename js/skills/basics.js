@@ -4,7 +4,7 @@ $(document).ready(function() {
             tag: "html5",
             hex: "E34F26",
             title: "HTML",
-            level: "8",
+            level: "9",
             description: "Semantic is Enchantic",
             rgba: "227,79,38,1"
         },

@@ -25,6 +25,11 @@
     background: #3b383e;
 }
 
+::selection {
+  color: #e3e1d4;
+  background-color: #3b383e;
+}
+
 .w-\[18px\] {
   width: 18px;
 }

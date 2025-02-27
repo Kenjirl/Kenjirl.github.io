@@ -1,133 +1,175 @@
 $(document).ready(function() {
 	const difficulties = [
-		{'Novice': 200}, 
-		{'Easy': 400}, 
-		{'Medium': 600}, 
-		{'Hard': 800}, 
-		{'Expert': 1000}
+		{ 'Novice': { exp: 200, color: 'text-green-500' } }, 
+		{ 'Easy': { exp: 400, color: 'text-blue-500' } }, 
+		{ 'Medium': { exp: 600, color: 'text-yellow-500' } }, 
+		{ 'Hard': { exp: 800, color: 'text-red-500' } }, 
+		{ 'Expert': { exp: 1000, color: 'text-purple-500' } }
 	];
 
 	const quests = [
 		{
 			title: 'Ruteng',
-			detail: 'Tugas Akhir Membuat Website sebagai syarat kelulusan kelas Belajar Dasar Pemrograman JavaScript di Dicoding. Saya memilih topik mengenai kota kelahiran saya.',
+			detail: 'My Final Project is to create a website as a graduation requirement for the "Basic JavaScript Programming" class at Dicoding. I have chosen a topic about my hometown.',
 			missions: [
-				'Membuat web dengan menerapkan konsep semantik',
-				'Menampilkan identitas diri secara float pada aside'
+				'Creating a website by applying semantic concepts.',
+				'Displaying personal identity using float in the aside section.'
 			],
 			exp: 100,
 			lastSaved: 2022,
-			url: 'https://kenjirl.github.io/halaman-profil-Ruteng/'
+			url: 'https://kenjirl.github.io/halaman-profil-Ruteng/',
+			tech: ['HTML, CSS, JavaScript']
 		},
 		{
 			title: 'Bookshelf App',
-			detail: 'Aplikasi Pengelolaan Data Menggunakan DOM dan Web Storage sebagai syarat kelulusan kelas Belajar Membuat Front-End Web untuk Pemula di Dicoding. Aplikasi ini bertujuan untuk mencatat daftar buku-buku yang sedang dibaca maupun buku yang akan dibaca.',
+			detail: 'A Data Management Application Using DOM and Web Storage as a graduation requirement for the "Beginner Front-End Web Development" class at Dicoding. This application is designed to record books that are currently being read or will be read.',
 			missions: [
-				'Dapat menambah buku baru',
-				'Memiliki 2 rak buku (belum selesai dibaca dan selesai dibaca',
-				'Dapat memindahkan buku antar rak',
-				'Dapat menghapus buku',
+				'Add new books',
+				'Have two bookshelves (unfinished and finished books)',
+				'Move books between shelves',
+				'Delete books'
 			],
 			exp: 300,
 			lastSaved: 2022,
-			url: 'https://kenjirl.github.io/bookshelf-app/'
+			url: 'https://kenjirl.github.io/bookshelf-app/',
+			tech: ['HTML, CSS, JavaScript']
 		},
 		{
 			title: 'The Movie DB',
-			detail: 'Membuat Aplikasi Web dengan ES6, Custom Element, NPM, Module Bundler, dan AJAX sebagai syarat kelulusan kelas Belajar Fundamental Front-End Web Development di Dicoding. Aplikasi ini bertujuan untuk menampilkan daftar film yang terdaftar pada The Movie DB dengan memanfaatkan API.',
+			detail: 'A Web Application utilizing ES6, Custom Elements, NPM, Module Bundler, and AJAX as a graduation requirement for the "Fundamental Front-End Web Development" class at Dicoding. This application aims to display a list of movies registered in The Movie DB API.',
 			missions: [
-				'Menggunakan standar ES6',
-				'Menggunakan satu custom element',
-				'Menggunakan Webpack',
-				'Memanfaatkan API dengan konsep AJAX',
+				'Implement ES6 standards',
+				'Use at least one custom element',
+				'Utilize Webpack',
+				'Fetch data using AJAX'
 			],
 			exp: 700,
 			lastSaved: 2022,
-			url: 'https://kenjirl.github.io/the-movie-db/'
+			url: 'https://kenjirl.github.io/the-movie-db/',
+			tech: ['HTML, CSS, JavaScript, AJAX, NodeJS, API']
 		},
 		{
 			title: 'Personal Note',
-			detail: 'Membangun SPA + API, Context, dan Hooks sebagai syarat kelulusan kelas Belajar Fundamental Aplikasi Web dengan React di Dicoding. Aplikasi ini bertujuan untuk menyimpan catatan, di mana terdapat catatan aktif dan catatan arsip, dan setiap catatan milik masing-masing pengguna hanya dapat diakses oleh pengguna tersebut (menggunakan autentikasi).',
+			detail: 'Building an SPA with API, Context, and Hooks as a graduation requirement for the "Fundamental Web Application Development with React" class at Dicoding. This application allows users to store notes, where there are active and archived notes, and each user can only access their own notes (using authentication).',
 			missions: [
-				'Dapat menampilkan, menambah, dan menghapus catatan',
-				'Memanfaatkan Restful API sebagai sumber data',
-				'Menggunakan registrasi dan autentikasi',
-				'Dapat mengubah tema',
+				'Display, add, and delete notes',
+				'Use a Restful API as a data source',
+				'Implement user registration and authentication',
+				'Allow users to switch themes'
 			],
 			exp: 800,
 			lastSaved: 2022,
-			url: 'https://kenjirl.github.io/personal-note-2/'
+			url: 'https://kenjirl.github.io/personal-note-2/',
+			tech: ['HTML, CSS, JavaScript, ReactJS, API']
 		},
 		{
 			title: 'Better Me',
-			detail: 'SIB Cycle 3 Capstone Project sebagai syarat kelulusan SIB di Dicoding. Aplikasi ini memanfaatkan spoonacular API untuk dapat menampilkan resep makanan yang sesuai dengan kebutuhan kalori atau pencarian pengguna.',
+			detail: 'SIB Cycle 3 Capstone Project as a graduation requirement for SIB at Dicoding. This application utilizes the Spoonacular API to display food recipes based on calorie needs or user searches.',
 			missions: [
-				'Menampilkan daftar & detail resep makanan',
-				'Memiliki fitur filter pencarian',
-				'Memiliki fitur menyimpan resep makanan pada perangkat pengguna',
+				'Display a list & details of food recipes',
+				'Include a search filter feature',
+				'Allow users to save recipes on their devices'
 			],
 			exp: 1000,
 			lastSaved: 2022,
-			url: 'https://better-me-242.netlify.app'
+			url: 'https://better-me-242.netlify.app',
+			tech: ['HTML, CSS, JavaScript, ReactJS, API']
 		},
 		{
 			title: 'Timer App',
-			detail: 'Sesuai namanya, aplikasi ini menrupakan aplikasi yang dapat melakukan perhitungan mundur sesuai dengan input yang diberikan.',
+			detail: 'As the name suggests, this application is a countdown timer that runs based on the user\'s input.',
 			missions: [
-				'Menambah durasi timer',
-				'Melakukan perhitungan mundur'
+				'Add timer duration',
+				'Perform countdown'
 			],
 			exp: 200,
 			lastSaved: 2022,
-			url: 'https://2001kevin.github.io'
+			url: 'https://2001kevin.github.io',
+			tech: ['HTML, CSS, JavaScript']
 		},
 		{
 			title: 'Digital Wedding Invitation',
-			detail: 'Project ini merupakan pekerjaan berbayar pertama yang saya dapatkan. Project ini bertujuan untuk membuat undangan pernikahan yang nantinya akan dibagikan kepada tamu undangan. Pengelolaan tamu undangan dapat dilakukan dari sisi admin. ',
+			detail: 'This project was the first paid job I received. It was created to generate digital wedding invitations that can be shared with guests. Guest management can be handled from the admin side.',
 			missions: [
-				'Mendesain undangan pernikahan',
-				'Membuat back-end untuk mengelola tamu undangan'
+				'Design wedding invitations',
+				'Develop a back-end system for managing guest invitations'
 			],
 			exp: 1000,
 			lastSaved: 2023,
-			url: 'https://2001kevin.github.io/undangan_leonardo_vania/'
+			url: 'https://github.com/Kenjirl/wedding-invitation-app-backend',
+			tech: ['HTML, CSS, JavaScript, PHP, MySQL, Laravel']
 		},
 		{
 			title: 'Random Rates',
-			detail: 'Sistem penilaian personal. Saya membuat ini dengan tujuan untuk mencatat penilaian Saya terhadap suatu produk yang Saya coba.',
+			detail: 'A personal rating system. I created this to keep track of my ratings for products I have tried.',
 			missions: [
-				'Menampilkan penilaian terhadap suatu produk yang dicoba',
+				'Display ratings for reviewed products'
 			],
 			exp: 500,
 			lastSaved: 2024,
-			url: 'https://kenjirl.github.io/random-rate/'
+			url: 'https://kenjirl.github.io/random-rate/',
+			tech: ['HTML, CSS, TailwindCSS, JavaScript, ReactJS']
 		},
 		{
 			title: 'Endless Tic-Tac-Toe',
-			detail: 'Permainan Tic-Tac-Toe tanpa akhir! Terus bermain hingga mendapatkan pemenangnya.',
+			detail: 'An endless Tic-Tac-Toe game! Keep playing until a winner is determined.',
 			missions: [
-				'Permainan Tic-Tac-Toe',
-				'Tanpa akhir (hingga mendapatkan pemenang)',
-				'Menggunakan input keyboard',
+				'Classic Tic-Tac-Toe gameplay',
+				'Endless mode (until a winner is found)',
+				'Keyboard input support'
 			],
 			exp: 200,
 			lastSaved: 2024,
-			url: 'https://kenjirl.github.io/endless-tic-tac-toe/'
+			url: 'https://kenjirl.github.io/endless-tic-tac-toe/',
+			tech: ['HTML, CSS, TailwindCSS, Javascript']
+		},
+		{
+			title: 'Wedding Marketplace',
+			detail: 'As the name suggests, this application is a specialized marketplace for wedding-related needs. Users can take on the role of either a couple planning their wedding or a service provider offering wedding-related services.',
+			missions: [
+				'Search for and book the most suitable wedding service providers.',
+				'Make payments directly within the app and leave reviews.',
+				'Create digital wedding invitations with a variety of available templates.'
+			],
+			exp: 1000,
+			lastSaved: 2024,
+			url: 'https://github.com/Kenjirl/wedding-marketplace/',
+			tech: ['HTML, CSS, TailwindCSS, JavaScript, PHP, MySQL, Laravel, Midtrans Payment Gateway']
 		},
 	];
 
 	quests.forEach(function(quest, index) {
+		let questDifficulty = '';
+		let questColor = '';
+
+		for (let i = 0; i < difficulties.length; i++) {
+			let difficulty = Object.keys(difficulties[i])[0];
+			let expRequirement = difficulties[i][difficulty].exp;
+			if (quest.exp <= expRequirement) {
+				questDifficulty = difficulty;
+				questColor = difficulties[i][difficulty].color;
+				break;
+			}
+		}
+
 		$('#questButtonsContainer').append(`
 			<div>
-				<button class="relative w-full aspect-square mx-auto mb-4 last:mb-0 rounded bg-cst-black border-[3px] border-cst-cream shadow-down-cream outline-none
-					hover:bg-cst-cream hover:border-cst-black hover:shadow-up-cream hover:-translate-y-2 hover:text-cst-black 
-					focus:bg-cst-cream focus:border-cst-black focus:shadow-up-cream focus:-translate-y-2 focus:text-cst-black 
-					active:shadow-down-cream active:-translate-y-0 
-					transition-all group quest-button text-center"
+				<button class="relative w-full flex items-center justify-center gap-2 mx-auto rounded bg-cst-cream border-[2px] border-cst-black text-cst-black shadow-up-cream outline-none brightness-75
+					hover:brightness-100 focus:brightness-100
+					active:shadow-down-cream active:translate-y-2 
+					transition-all group quest-button"
 					type="button" id="questButton-${index}">
-						<span class="font-bold text-xl">
-							${index+1}
-						</span>
+						<img class="w-[100px] aspect-video rounded-l-sm"
+							src="../img/portfolio/${index+1}.jpg" alt="Image Button ${index}">
+						<div class="w-full">
+							<p class="text-start">${quest.title}</p>
+						</div>
+						<div>
+							<span class="${questColor}">${questDifficulty}</span>
+						</div>
+						<div class="w-[75px] play-btn">
+							<i class="fa-solid fa-circle-play"></i>
+						</div>
 				</button>
 			</div>
 		`);
@@ -147,7 +189,6 @@ $(document).ready(function() {
 
 	$('#closeQuestButtonsContainer').click(function () { 
 		toggleQuestContainerStatus('close');
-		console.log('asdasda')
 	});
 
 	$('#openQuestButtonsContainer').click(function () { 
@@ -158,21 +199,33 @@ $(document).ready(function() {
 		let id = parseInt($(this).attr('id').replace('questButton-', ''));
 		let quest = quests[id];
 
-		$('#questImage').attr("src", `../img/portfolio/${id+1}.png`).attr("alt", `Quest ${id+1}`);
+		$('.quest-button')
+			.removeClass('translate-y-2 bg-cst-black text-cst-cream border-cst-cream shadow-down-cream brightness-100')
+            .addClass('bg-cst-cream text-cst-black border-cst-black shadow-up-cream brightness-75');
+
+		$(this)
+			.addClass('translate-y-2 bg-cst-black text-cst-cream border-cst-cream shadow-down-cream brightness-100')
+			.removeClass('bg-cst-cream text-cst-black border-cst-black shadow-up-cream brightness-75');
+
+		$('#questImage').attr("src", `../img/portfolio/${id+1}.jpg`).attr("alt", `Quest ${id+1}`);
 		$('#questTitle').text(quest.title);
 		$('#questStory').text(quest.detail);
 		$('#questNumber').text(`#${id+1}`);
 
 		let questDifficulty = '';
+		let questColor = '';
+
 		for (let i = 0; i < difficulties.length; i++) {
 			let difficulty = Object.keys(difficulties[i])[0];
-			let expRequirement = difficulties[i][difficulty];
+			let expRequirement = difficulties[i][difficulty].exp;
 			if (quest.exp <= expRequirement) {
 				questDifficulty = difficulty;
+				questColor = difficulties[i][difficulty].color;
 				break;
 			}
 		}
-		$('#questDifficulty').text('Difficulty : ' + questDifficulty);
+
+		$('#questDifficulty').text(questDifficulty).removeClass().addClass(questColor);
 
 		$('#questExp').text(quest.exp);
 		$('#questLastSaved').text(quest.lastSaved);
@@ -184,6 +237,12 @@ $(document).ready(function() {
 		});
 		$('#questMission').html(missionList);
 
+		let techList = '';
+		quest.tech.forEach(function(tech) {
+			techList += '<li>' + tech + '</li>';
+		});
+		$('#questTechnology').html(techList);
+
 		toggleQuestContainerStatus('close');
 
 		let idPrev = id-1;
@@ -191,7 +250,7 @@ $(document).ready(function() {
 		if (idPrev < 0) {
 			idPrev = quests.length-1;
 		}
-		if (idNext >=quests.length) {
+		if (idNext >= quests.length) {
 			idNext = 0;
 		}
 		$('#questPrevButton').data('id', idPrev);
@@ -209,4 +268,6 @@ $(document).ready(function() {
 		let id = parseInt($(this).data('id'));
 		$('#questButton-' + id).click();
 	});
+
+	$('#questButton-0').trigger('click');
 });
