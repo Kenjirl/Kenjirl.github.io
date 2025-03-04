@@ -3,6 +3,7 @@ $(document).ready(function() {
         { text: "Lore", href: "#lore" },
         { text: "Abilities", href: "#abilities" },
         { text: "Quests", href: "#quests" },
+        { text: "Achievements", href: "#achievements" },
         { text: "Summon", href: "#summon" }
     ];
 

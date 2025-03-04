@@ -30,6 +30,47 @@
   background-color: #3b383e;
 }
 
+.blurred-img {
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.blurred-img::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  animation: pulse 2.5s infinite;
+  background-color: var(--text-color);
+}
+
+@keyframes pulse {
+  0% {
+      opacity: 0;
+  }
+  50% {
+      opacity: 0.1;
+  }
+  100% {
+      opacity: 0;
+  }
+}
+
+.blurred-img.loaded::before {
+  animation: none;
+  content: none;
+}
+
+.blurred-img img {
+  opacity: 0;
+  transition: opacity 250ms ease-in-out;
+}
+
+.blurred-img.loaded img {
+  opacity: 1;
+}
+
 .w-\[18px\] {
   width: 18px;
 }
