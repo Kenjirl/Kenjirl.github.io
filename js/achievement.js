@@ -20,12 +20,13 @@ $(document).ready(function() {
         let imgSrcFallback = `./img/achievement/small/${index + 1}.jpg`;
 
         achievementHtml += `
-            <div class="w-full p-2 flex flex-col items-center justify-center gap-2 bg-cst-black rounded">
+            <div class="w-full p-2 flex flex-col items-center justify-center gap-2 bg-cst-black rounded snap-center">
                 <div class="w-2 aspect-square rounded-full bg-cst-cream"></div>
                 <div class="w-full aspect-video rounded-sm bg-cover bg-center brightness-75 blurred-img" style="background-image: url('${imgSrcFallback}');">
-                    <a class="bg-transparent"
+                    <a class="bg-transparent group"
                         href="${imgSrc}" data-fancybox="achievement-no" data-caption="${index + 1} - ${title}" id="zoom-pic-${index+1}">
-                        <img class="w-full aspect-video rounded-sm object-cover object-center brightness-75 hover:brightness-100 transition-all" 
+                        <img class="w-full min-w-[250px] aspect-video rounded-sm object-cover object-center brightness-75 outline-cst-cream
+                            hover:brightness-100 focus:brightness-100 group-hover:brightness-100 group-focus:brightness-100 transition-all" 
                             src="${imgSrc}" 
                             alt="Achievement ${index + 1} - ${title} Picture" 
                             loading="lazy">

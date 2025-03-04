@@ -42,7 +42,7 @@
   inset: 0;
   opacity: 0;
   animation: pulse 2.5s infinite;
-  background-color: var(--text-color);
+  background-color: #ffffff;
 }
 
 @keyframes pulse {

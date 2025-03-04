@@ -136,6 +136,32 @@ $(document).ready(function() {
 			url: 'https://github.com/Kenjirl/wedding-marketplace/',
 			tech: ['HTML, CSS, TailwindCSS, JavaScript, PHP, MySQL, Laravel, Midtrans Payment Gateway']
 		},
+		{
+			title: 'GreenTech Solution Group Company Profile',
+			detail: 'This is a Company Profile for GreenTech Solution as my Nusacodes Bootcamp 1st Assignment.',
+			missions: [
+				'Make a Company Profile.',
+				'Need to have Homepage, About Us, Services, and Contact Us.'
+			],
+			exp: 100,
+			lastSaved: 2025,
+			url: 'https://kenjirl.github.io/greentech-solution-company-profile/index.html',
+			tech: ['HTML, CSS, TailwindCSS, JavaScript']
+		},
+		{
+			title: 'Point of Sales',
+			detail: 'This is a simple POS application for managing product stock and transactions efficiently. It streamlines sales processes, tracks inventory, and ensures seamless payment integration.',
+			missions: [
+				'Manage new Roles and new User.',
+				'CRUD for datas around retail like suppliers, customers, categories, etc.',
+				'Payment system for sales using payment gateways.',
+				'Export transaction and opname report data.'
+			],
+			exp: 700,
+			lastSaved: 2025,
+			url: 'https://github.com/Kenjirl/kodemastery-pos/',
+			tech: ['HTML, CSS, TailwindCSS, JavaScript, PHP, MySQL, Inertia.js, ReactJS, Laravel, Midtrans Payment Gateway']
+		},
 	];
 
 	quests.forEach(function(quest, index) {
