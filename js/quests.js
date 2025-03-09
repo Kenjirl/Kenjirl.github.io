@@ -162,6 +162,19 @@ $(document).ready(function() {
 			url: 'https://github.com/Kenjirl/kodemastery-pos/',
 			tech: ['HTML, CSS, TailwindCSS, JavaScript, PHP, MySQL, Inertia.js, ReactJS, Laravel, Midtrans Payment Gateway']
 		},
+		{
+			title: 'Warm Log Residence',
+			detail: 'Just a fun website that promotes houses on snowy place.',
+			missions: [
+				'Have Four Horsemen page for company page (landing page, about us, services, & contact).',
+				'A few list of houses to sell.',
+				'Have a blog for each house type.',
+			],
+			exp: 150,
+			lastSaved: 2025,
+			url: 'https://kenjirl.github.io/warm-log-residence/',
+			tech: ['HTML, CSS, TailwindCSS, JavaScript']
+		},
 	];
 
 	quests.forEach(function(quest, index) {
