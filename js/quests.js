@@ -175,6 +175,20 @@ $(document).ready(function() {
 			url: 'https://kenjirl.github.io/warm-log-residence/',
 			tech: ['HTML, CSS, TailwindCSS, JavaScript']
 		},
+		{
+			title: 'Shipment App',
+			detail: "My first ever web based app using Java. It's a simple app to manage product shipment to customers.",
+			missions: [
+				'Using 4 Models, Merchant, Product, Shipment, and Customer',
+				'Simple CRUD', 
+				'Planning to add some auth', 
+				"That's all :D", 
+			],
+			exp: 500,
+			lastSaved: 2025,
+			url: 'https://github.com/Kenjirl/shipment-app/',
+			tech: ['HTML, CSS, TailwindCSS, Java, Spring Boot']
+		},
 	];
 
 	quests.forEach(function(quest, index) {

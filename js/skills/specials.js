@@ -32,6 +32,14 @@ $(document).ready(function() {
             description: "Easier way to Manipulate DOM",
             rgba: "7,105,173,1"
         },
+        {
+            tag: "spring",
+            hex: "6DB33F",
+            title: "Spring Boot",
+            level: "7",
+            description: "Hate to Love with Java",
+            rgba: "109,179,63,1"
+        },
     ];
 
     specials.forEach(function(skill) {

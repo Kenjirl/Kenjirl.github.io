@@ -149,8 +149,9 @@
         </div>
 
         <div class="relative w-full max-w-[1200px] mx-auto flex items-start justify-center gap-8">
+            <!-- LEFT -->
             <div class="fixed top-0 -right-[100%] w-full h-screen py-24 px-8 bg-cst-black bg-[url('/img/dust-2.png')]
-                lg:relative lg:-right-0 lg:h-fit lg:max-h-[75vh] lg:flex-1 lg:p-2 lg:bg-transparent lg:bg-none
+                lg:relative lg:-right-0 lg:h-fit lg:max-h-[500px] lg:flex-1 lg:p-2 lg:bg-transparent lg:bg-none
                 overflow-y-scroll z-30 transition-all ease-linear duration-500"
                 id="questListContainer">
 
@@ -168,7 +169,8 @@
                 </div>
             </div>
 
-            <div class="flex-1 w-full p-1 md:p-2 rounded-lg bg-cst-cream text-cst-black"
+            <!-- RIGHT -->
+            <div class="flex-1 w-full p-1 md:p-2 rounded-lg bg-cst-cream text-cst-black z-10"
                 id="questDetailContainer">
                 <img class="w-full aspect-video object-center rounded-sm md:rounded"
                     src="../img/portfolio/1.jpg" alt="Quest 1" id="questImage">
@@ -245,26 +247,26 @@
 
         <!-- Squares Atribute -->
         <div class="absolute top-0 left-0 w-[20%] lg:w-[12%] grid grid-cols-5" 
-            id="squarePortfolio"></div>
+            id="squarePortfolioTop"></div>
+
+        <!-- Squares Atribute -->
+        <div class="absolute bottom-0 right-0 w-[20%] lg:w-[12%] grid grid-cols-5" 
+            id="squarePortfolioBottom"></div>
     </section>
 
-    <!-- Divider -->
-    <div class="w-full" id="divider">
-        <div class="w-full grid grid-flow-col auto-cols-fr bg-cst-black" id="squareDividerBlack1"></div>
-        <div class="w-full grid grid-flow-col auto-cols-fr bg-cst-black" id="squareDividerBlack2"></div>
-        <div class="w-full grid grid-flow-col auto-cols-fr" id="squareDividerCream1"></div>
-        <div class="w-full grid grid-flow-col auto-cols-fr" id="squareDividerCream2"></div>
-    </div>
-
     <!-- Achievement -->
-    <section class="w-full max-w-[1200px] py-16 mx-auto font-macondo section"
+    <section class="relative w-full py-16 mx-auto font-macondo section"
         id="achievements">
         <h2 class="w-full text-center mb-8 font-bold text-xl md:text-3xl lg:text-4xl uppercase">
             ACHIEVEMENTS</h2>
 
-        <div class="w-full max-w-[80%] lg:max-w-[1200px] mx-auto px-2 md:px-4 grid grid-rows-3 grid-flow-col text-sm lg:text-base gap-4 text-center text-cst-cream overflow-x-auto snap-x"
+        <div class="w-full max-w-[80%] lg:max-w-[1200px] mx-auto px-2 md:px-4 pb-2 grid grid-rows-3 grid-flow-col text-sm lg:text-base gap-4 text-center text-cst-cream overflow-x-auto snap-x"
             id="achievementContainer"></div>
         </div>
+
+        <!-- Squares Atribute -->
+        <div class="absolute top-0 right-0 w-[20%] lg:w-[12%] grid grid-cols-5" 
+            id="squareAchievement"></div>
     </section>
 
     <!-- Contact/Summon Me -->

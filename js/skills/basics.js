@@ -24,6 +24,22 @@ $(document).ready(function() {
             description: "Manipulation makes Animation",
             rgba: "247,223,30,1"
         },
+        {
+            tag: "php",
+            hex: "777BB4",
+            title: "PHP",
+            level: "6",
+            description: "Proficient in Fundamentals",
+            rgba: "119,123,180,1"
+        },
+        {
+            tag: "mysql",
+            hex: "4479A1",
+            title: "MySQL",
+            level: "9",
+            description: "DON'T DELETE * from tb_name;",
+            rgba: "68,121,161,1"
+        },
     ];
 
     basics.forEach(function(skill) {

@@ -12,6 +12,11 @@ $(document).ready(function() {
         'Meniti Karier sebagai Software Developer',
         'Front End Web & React - Dicoding X Kampus Merdeka Batch 3',
         'Finalis ECBC 2022',
+        'MySkill - Front End - HTML',
+        'MySkill - Front End - CSS',
+        'MySkill - Website Development Fundamental',
+        'MySkill - Git and Github',
+        'MySkill - Troubleshooting & Debugging',
     ];
 
     let achievementHtml = "";
@@ -28,11 +33,11 @@ $(document).ready(function() {
                         <img class="w-full min-w-[250px] aspect-video rounded-sm object-cover object-center brightness-75 outline-cst-cream
                             hover:brightness-100 focus:brightness-100 group-hover:brightness-100 group-focus:brightness-100 transition-all" 
                             src="${imgSrc}" 
-                            alt="Achievement ${index + 1} - ${title} Picture" 
+                            alt="Achievement ${title} Picture" 
                             loading="lazy">
                     </a>
                 </div>
-                <p class="line-clamp-1">${index + 1} - ${title}</p>
+                <p class="line-clamp-1">${title}</p>
             </div>
         `;
     });

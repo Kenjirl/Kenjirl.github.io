@@ -9,6 +9,12 @@ $(document).ready(function() {
         {
             description: "Minimalist is Elegist",
         },
+        {
+            description: "Model, View, & Controller Fan!",
+        },
+        {
+            description: "Adaptive to new Techs",
+        },
     ];
 
     additionals.forEach(function(skill, index) {

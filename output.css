@@ -677,6 +677,10 @@ video {
   left: 0.5rem;
 }
 
+.right-0 {
+  right: 0px;
+}
+
 .right-2 {
   right: 0.5rem;
 }
@@ -917,10 +921,6 @@ video {
   max-height: 500px;
 }
 
-.max-h-\[80vh\] {
-  max-height: 80vh;
-}
-
 .w-2 {
   width: 0.5rem;
 }
@@ -972,18 +972,6 @@ video {
 
 .w-full {
   width: 100%;
-}
-
-.min-w-full {
-  min-width: 100%;
-}
-
-.min-w-\[500px\] {
-  min-width: 500px;
-}
-
-.min-w-\[300px\] {
-  min-width: 300px;
 }
 
 .min-w-\[250px\] {
@@ -1347,10 +1335,6 @@ video {
        break-after: column;
 }
 
-.auto-cols-fr {
-  grid-auto-columns: minmax(0, 1fr);
-}
-
 .grid-flow-row {
   grid-auto-flow: row;
 }
@@ -1385,10 +1369,6 @@ video {
 
 .grid-rows-3 {
   grid-template-rows: repeat(3, minmax(0, 1fr));
-}
-
-.grid-rows-1 {
-  grid-template-rows: repeat(1, minmax(0, 1fr));
 }
 
 .flex-row {
@@ -2301,6 +2281,10 @@ video {
   padding-bottom: 0.25rem;
 }
 
+.pb-2 {
+  padding-bottom: 0.5rem;
+}
+
 .pl-4 {
   padding-left: 1rem;
 }
@@ -3038,6 +3022,21 @@ video {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
+.group:hover .group-hover\:drop-shadow-\[0_0_5px_rgba\(109\2c 179\2c 63\2c 1\)\] {
+  --tw-drop-shadow: drop-shadow(0 0 5px rgba(109,179,63,1));
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.group:hover .group-hover\:drop-shadow-\[0_0_5px_rgba\(119\2c 123\2c 180\2c 1\)\] {
+  --tw-drop-shadow: drop-shadow(0 0 5px rgba(119,123,180,1));
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.group:hover .group-hover\:drop-shadow-\[0_0_5px_rgba\(68\2c 121\2c 161\2c 1\)\] {
+  --tw-drop-shadow: drop-shadow(0 0 5px rgba(68,121,161,1));
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
 .group:focus .group-focus\:drop-shadow-\[0_0_5px_rgba\(227\2c 79\2c 38\2c 1\)\] {
   --tw-drop-shadow: drop-shadow(0 0 5px rgba(227,79,38,1));
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
@@ -3070,6 +3069,21 @@ video {
 
 .group:focus .group-focus\:drop-shadow-\[0_0_5px_rgba\(97\2c 218\2c 251\2c 1\)\] {
   --tw-drop-shadow: drop-shadow(0 0 5px rgba(97,218,251,1));
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.group:focus .group-focus\:drop-shadow-\[0_0_5px_rgba\(109\2c 179\2c 63\2c 1\)\] {
+  --tw-drop-shadow: drop-shadow(0 0 5px rgba(109,179,63,1));
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.group:focus .group-focus\:drop-shadow-\[0_0_5px_rgba\(119\2c 123\2c 180\2c 1\)\] {
+  --tw-drop-shadow: drop-shadow(0 0 5px rgba(119,123,180,1));
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.group:focus .group-focus\:drop-shadow-\[0_0_5px_rgba\(68\2c 121\2c 161\2c 1\)\] {
+  --tw-drop-shadow: drop-shadow(0 0 5px rgba(68,121,161,1));
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
@@ -3484,6 +3498,18 @@ video {
 
   .lg\:max-h-\[75vh\] {
     max-height: 75vh;
+  }
+
+  .lg\:max-h-\[400px\] {
+    max-height: 400px;
+  }
+
+  .lg\:max-h-\[700px\] {
+    max-height: 700px;
+  }
+
+  .lg\:max-h-\[500px\] {
+    max-height: 500px;
   }
 
   .lg\:w-\[12\%\] {
