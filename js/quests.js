@@ -100,6 +100,17 @@ $(document).ready(function() {
 			tech: ['HTML, CSS, JavaScript, PHP, MySQL, Laravel']
 		},
 		{
+			title: 'Profil Negari',
+			detail: 'This is actually part of a bigger project, but I just wanna show off how I made the navbar because I find it sooo interesting.',
+			missions: [
+				'Display a few profile of Negari'
+			],
+			exp: 200,
+			lastSaved: 2024,
+			url: 'https://kenjirl.github.io/profil-negari/',
+			tech: ['HTML, CSS, TailwindCSS, JavaScript']
+		},
+		{
 			title: 'Random Rates',
 			detail: 'A personal rating system. I created this to keep track of my ratings for products I have tried.',
 			missions: [
@@ -189,9 +200,21 @@ $(document).ready(function() {
 			url: 'https://github.com/Kenjirl/shipment-app/',
 			tech: ['HTML, CSS, TailwindCSS, Java, Spring Boot']
 		},
+		{
+			title: 'Cloneflix',
+			detail: "Clone of Netflix (Not quite but yeah). Only for film review and recomendation, not a streaming platform.",
+			missions: [
+				'Using TMDB API',
+				'Had simple search and detail page',
+			],
+			exp: 300,
+			lastSaved: 2025,
+			url: 'https://kenjirl.github.io/cloneflix/',
+			tech: ['HTML, CSS, TailwindCSS, JavaScript']
+		},
 	];
 
-	quests.forEach(function(quest, index) {
+	quests.reverse().forEach(function(quest, index) {
 		let questDifficulty = '';
 		let questColor = '';
 
@@ -213,7 +236,7 @@ $(document).ready(function() {
 					transition-all group quest-button"
 					type="button" id="questButton-${index}">
 						<img class="w-[100px] aspect-video rounded-l-sm"
-							src="../img/portfolio/${index+1}.jpg" alt="Image Button ${index}">
+							src="../img/portfolio/${quests.length-index}.jpg" alt="Image Button ${index}">
 						<div class="w-full">
 							<p class="text-start">${quest.title}</p>
 						</div>
@@ -260,7 +283,7 @@ $(document).ready(function() {
 			.addClass('translate-y-2 bg-cst-black text-cst-cream border-cst-cream shadow-down-cream brightness-100')
 			.removeClass('bg-cst-cream text-cst-black border-cst-black shadow-up-cream brightness-75');
 
-		$('#questImage').attr("src", `../img/portfolio/${id+1}.jpg`).attr("alt", `Quest ${id+1}`);
+		$('#questImage').attr("src", `../img/portfolio/${quests.length-id}.jpg`).attr("alt", `Quest ${id+1}`);
 		$('#questTitle').text(quest.title);
 		$('#questStory').text(quest.detail);
 		$('#questNumber').text(`#${id+1}`);
