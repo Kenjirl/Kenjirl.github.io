@@ -9,7 +9,7 @@ $(document).ready(function() {
             rgba: "227,79,38,1"
         },
         {
-            tag: "css3",
+            tag: "css",
             hex: "00A9FF",
             title: "CSS",
             level: "9",

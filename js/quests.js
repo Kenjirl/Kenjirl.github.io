@@ -164,7 +164,7 @@ $(document).ready(function() {
 			detail: 'This is a simple POS application for managing product stock and transactions efficiently. It streamlines sales processes, tracks inventory, and ensures seamless payment integration.',
 			missions: [
 				'Manage new Roles and new User.',
-				'CRUD for datas around retail like suppliers, customers, categories, etc.',
+				'CRUD for data around retail like suppliers, customers, categories, etc.',
 				'Payment system for sales using payment gateways.',
 				'Export transaction and opname report data.'
 			],
@@ -202,7 +202,7 @@ $(document).ready(function() {
 		},
 		{
 			title: 'Cloneflix',
-			detail: "Clone of Netflix (Not quite but yeah). Only for film review and recomendation, not a streaming platform.",
+			detail: "Clone of Netflix (Not quite but yeah). Only for film review and recommendation, not a streaming platform.",
 			missions: [
 				'Using TMDB API',
 				'Had simple search and detail page',
@@ -211,6 +211,22 @@ $(document).ready(function() {
 			lastSaved: 2025,
 			url: 'https://kenjirl.github.io/cloneflix/',
 			tech: ['HTML, CSS, TailwindCSS, JavaScript']
+		},
+		{
+			title: 'Rapid Serial Visual Presentation',
+			detail: "Rapid Serial Visual Presentation (RSVP) is a speed reading technique that presents words in rapid succession at a fixed focal point. This project is a web-based RSVP application that allows users to read text quickly by displaying one word at a time in a controlled manner.",
+			missions: [
+				'Different pause between words based on punctuation',
+				'Settings for comfortable reading, with speed, pause, and resume control, and reading progress',
+				'Several font options',
+				'Sample text for testing',
+				'Option to read novel like story, where the dialog can be colored differently',
+				'OCR from upload image',
+			],
+			exp: 500,
+			lastSaved: 2026,
+			url: 'https://kenjirl.github.io/rapid-serial-visual-presentation/',
+			tech: ['HTML, CSS, TailwindCSS, JavaScript', 'Tesseract.js']
 		},
 	];
 
