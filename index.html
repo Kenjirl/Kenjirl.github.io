@@ -42,49 +42,24 @@
     </header>
 
     <!-- Home/Introduce/Lore -->
-    <section class="w-full max-h-[1200px] pt-8 md:p-8 md:pr-0 flex flex-col md:flex-row items-start lg:items-center justify-center gap-16 md:gap-8 font-macondo section"
-        id="lore">
-        <div class="flex-1 px-4 md:px-8 lg:px-16">
-            <div class="w-full mx-auto">
-                <h1 class="w-full text-center mb-8 font-bold text-xl md:text-3xl lg:text-5xl">
+    <section class="w-full px-4 py-4 font-macondo section" id="lore">
+        <div class="relative w-full max-w-[1400px] mx-auto"
+            id="loreMap">
+            <div class="absolute top-2 left-0 w-full md:pt-4 z-10">
+                <h1 class="w-fit p-4 mx-auto text-center mb-2 font-bold text-xl md:text-3xl lg:text-4xl text-shadow-lg text-shadow-slate-900">
                     My Lore to Web Development</h1>
-
-                <div class="w-full h-[30ch] md:h-[20ch] mb-2 carousel-content text-justify text-base lg:text-2xl" id="carouselContent"></div>
-
-                <div class="w-full flex items-center justify-between gap-2 md:gap-8">
-                    <div class="flex-1 w-full">
-                        <button class="w-[40px] md:w-[50px] aspect-square mx-auto flex items-center justify-center bg-cst-black md:text-2xl text-cst-cream shadow-up-black border-[3px] border-cst-cream rounded prev-btn
-                            hover:bg-cst-cream hover:text-cst-black hover:border-cst-black
-                            focus:bg-cst-cream focus:text-cst-black focus:border-cst-black
-                            active:translate-y-[8px] active:shadow-down-black
-                            transition-all">
-                            <i class="fa-solid fa-angle-left"></i>
-                        </button>
-                    </div>
-
-                    <div class="flex-1 w-full flex items-center justify-center gap-2 md:gap-8" 
-                        id="dotsContainer"></div>
-
-                    <div class="flex-1 w-full">
-                        <button class="w-[40px] md:w-[50px] aspect-square mx-auto flex items-center justify-center bg-cst-black md:text-2xl text-cst-cream shadow-up-black border-[3px] border-cst-cream rounded next-btn
-                            hover:bg-cst-cream hover:text-cst-black hover:border-cst-black
-                            focus:bg-cst-cream focus:text-cst-black focus:border-cst-black
-                            active:translate-y-[8px] active:shadow-down-black
-                            transition-all">
-                            <i class="fa-solid fa-angle-right"></i>
-                        </button>
-                    </div>
-                </div>
             </div>
+
+            <img class="block w-full h-auto select-none brightness-[90%] drop-shadow-[0_4px_2px_rgba(0,0,0,1)]" src="../img/map.svg" alt="Map of my journey" draggable="false">
+            <svg class="absolute inset-0 w-full h-full pointer-events-none"
+                viewBox="0 0 100 100" preserveAspectRatio="none" id="lorePath"></svg>
+            <div id="mapFlags"></div>
         </div>
 
-        <div class="lg:flex-1 w-full md:pl-0 md:w-1/3 lg:w-full pt-4 bg-cst-black md:rounded-s-3xl">
-            <div class="relative w-full">
-                <img class="h-[70vh] md:h-[40vh] lg:h-[65vh] max-h-[500px] object-contain mx-auto"
-                    src="../img/me-1.png" alt="Me">
-                <span class="absolute bottom-0 left-0 w-full pb-1 text-center text-lg lg:text-3xl rounded-bl-3xl uppercase text-cst-cream bg-cst-black"
-                    >Benedict Kenjiro Lehot</span>
-            </div>
+        <!-- Foto profil -->
+        <div class="relative w-full max-w-[400px] mx-auto mt-8 pt-4 bg-cst-black rounded-3xl">
+            <img class="h-[40vh] max-h-[400px] object-contain mx-auto" src="../img/me-1.png" alt="Me">
+            <span class="block w-full pb-1 text-center text-lg uppercase text-cst-cream">Benedict Kenjiro Lehot</span>
         </div>
     </section>
 
@@ -264,7 +239,6 @@
 
         <div class="w-full max-w-[80%] lg:max-w-[1200px] mx-auto px-2 md:px-4 pb-2 grid grid-rows-3 grid-flow-col text-sm lg:text-base gap-4 text-center text-cst-cream overflow-x-auto snap-x"
             id="achievementContainer"></div>
-        </div>
 
         <!-- Squares Atribute -->
         <div class="absolute top-0 right-0 w-[20%] lg:w-[12%] grid grid-cols-5" 
@@ -314,6 +288,41 @@
     <footer class="relative w-full p-4 text-xs md:text-base text-center bg-cst-black bg-[url('/img/dust-2.png')] text-cst-cream font-macondo font-extrabold overflow-hidden">
         <p>My Lore to Web Development</p>
     </footer>
+
+    <!-- Lore Modal -->
+    <div class="group/modal fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/75
+            invisible opacity-0 transition-all duration-300
+            aria-[hidden=false]:visible aria-[hidden=false]:opacity-100"
+        id="loreModal" aria-hidden="true">
+
+        <div class="relative w-full max-w-[820px] max-h-[88vh] overflow-y-auto px-6 md:px-10 pt-8 pb-6
+                bg-cst-cream bg-[url('/img/dust-2.png')] text-cst-black font-macondo
+                border-4 border-double border-cst-black rounded-xl
+                translate-y-5 scale-95 transition-transform duration-300
+                group-aria-[hidden=false]/modal:translate-y-0 group-aria-[hidden=false]/modal:scale-100"
+            role="dialog" aria-modal="true" aria-labelledby="loreTitle">
+
+            <button class="absolute top-2 right-4 text-3xl leading-none hover:rotate-90 focus:rotate-90 outline-none transition-transform"
+                id="loreClose" aria-label="Close">&times;</button>
+
+            <p class="text-center text-xs md:text-sm uppercase tracking-[0.15em] opacity-70" id="loreChapter"></p>
+            <h3 class="mt-1 mb-4 text-center font-bold text-2xl md:text-4xl" id="loreTitle"></h3>
+
+            <div class="space-y-4" id="loreBody"></div>
+
+            <div class="mt-6 flex items-center justify-between">
+                <button class="px-4 py-1 rounded border-2 border-cst-black bg-cst-black text-cst-cream
+                        hover:bg-transparent hover:text-cst-black focus:bg-transparent focus:text-cst-black outline-none
+                        disabled:opacity-30 disabled:pointer-events-none transition-all"
+                    id="lorePrev">&larr; Prev</button>
+                <span class="text-sm md:text-base" id="loreCounter"></span>
+                <button class="px-4 py-1 rounded border-2 border-cst-black bg-cst-black text-cst-cream
+                        hover:bg-transparent hover:text-cst-black focus:bg-transparent focus:text-cst-black outline-none
+                        disabled:opacity-30 disabled:pointer-events-none transition-all"
+                    id="loreNext">Next &rarr;</button>
+            </div>
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
