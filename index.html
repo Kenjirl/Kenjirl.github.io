@@ -30,7 +30,8 @@
 <body class="relative bg-cst-cream text-cst-black max-w-[2000px] mx-auto bg-[url('/img/dust-2.png')]">
 
     <!-- Home/Introduce/Lore -->
-    <section class="relative w-full px-4 py-4 font-macondo section" id="lore">
+    <section class="relative w-full min-h-[45svh] px-4 py-8 flex flex-col justify-center font-macondo section
+            md:block md:min-h-0 md:py-4" id="lore">
         <div class="relative w-full max-w-[1400px] mx-auto z-10">
 
             <!-- Title (mobile/tablet: di atas peta, lg+: menimpa peta) -->
@@ -67,7 +68,11 @@
 
                 <!-- Peta asli -->
                 <img class="relative block w-full h-full brightness-90 drop-shadow-[0_4px_2px_rgba(0,0,0,1)] select-none"
-                    src="../img/map.svg" alt="Map of my journey" draggable="false" fetchpriority="high">
+                    src="../img/map.webp"
+                    srcset="../img/map-mobile.webp 960w, ../img/map.webp 1920w"
+                    sizes="(min-width: 1432px) 1400px, calc(100vw - 32px)"
+                    width="1920" height="1088"
+                    alt="Map of my journey" draggable="false" fetchpriority="high">
             </div>
 
             <!-- Path -->
@@ -269,6 +274,7 @@
     <div data-component="components/lore-modal.html"></div>
     <div data-component="components/profile-modal.html"></div>
 
+    <script src="./js/squares.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="./js/components.js"></script>

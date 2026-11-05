@@ -1,6 +1,5 @@
 (function () {
     const scripts = [
-        './js/nav.js',
         './js/lore.js',
         './js/profile.js',
         './js/skills/basics.js',
@@ -9,7 +8,6 @@
         './js/quests.js',
         './js/achievement.js',
         './js/summon.js',
-        './js/squares.js',
     ];
 
     function loadScript(src) {

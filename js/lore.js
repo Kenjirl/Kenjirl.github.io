@@ -179,10 +179,15 @@ $(document).ready(function () {
         setTimeout(done, 1500); // cadangan
     }
 
-    if (mapImg.complete && mapImg.naturalWidth > 0) {
+    // Tunggu sampai gambar selesai diunduh DAN di-decode, supaya placeholder
+    // tidak hilang sebelum peta asli benar-benar siap digambar.
+    // Jika gagal (error/decode ditolak), tetap tampilkan UI.
+    if (typeof mapImg.decode === 'function') {
+        mapImg.decode().then(onMapReady, onMapReady);
+    } else if (mapImg.complete && mapImg.naturalWidth > 0) {
         onMapReady();
     } else {
         mapImg.addEventListener('load', onMapReady);
-        mapImg.addEventListener('error', onMapReady); // jangan sampai UI tersembunyi selamanya
+        mapImg.addEventListener('error', onMapReady);
     }
 });
