@@ -45,7 +45,8 @@ $(document).ready(function () {
     // Jalur putus-putus antar bendera (atribut SVG, tidak butuh class Tailwind)
     const points = chapters.map(c => `${c.x},${c.y}`).join(' ');
     $('#lorePath').html(`
-        <polyline points="${points}" fill="none" stroke="#e3e1d4" stroke-width="5"
+        <polyline class="stroke-3 [stroke-dasharray:6_6] md:stroke-5 md:[stroke-dasharray:10_10]"
+            points="${points}" fill="none" stroke="#e3e1d4" stroke-width="5"
             stroke-dasharray="10 10" stroke-linecap="round" opacity="1"
             vector-effect="non-scaling-stroke"></polyline>
     `);
@@ -53,15 +54,15 @@ $(document).ready(function () {
     // Bendera
     chapters.forEach(function (c, i) {
         const $flag = $(`
-            <button class="map-flag group absolute -translate-x-1/2 -translate-y-1/2 origin-center
-                    w-[clamp(3rem,7.5vw,5.25rem)] outline-none
+            <button class="map-flag invisible group absolute -translate-x-1/2 -translate-y-1/2 origin-center
+                    w-[clamp(2rem,7.5vw,5.25rem)] outline-hidden
                     hover:scale-125 focus-visible:scale-125
                     transition-transform duration-200"
                 style="left:${c.x}%; top:${c.y}%"
                 aria-label="Chapter ${i + 1}: ${c.title}" data-index="${i}">
 
                 <img class="block w-full h-auto pointer-events-none
-                        drop-shadow-[0_0_1px_#3b383e] drop-shadow-[0_3px_2px_rgba(0,0,0,0.5)]"
+                        drop-shadow-[0_3px_2px_rgba(0,0,0,0.5)]"
                     src="../img/flag-${i + 1}.svg" alt="" draggable="false">
 
                 <span class="absolute top-full left-1/2 -translate-x-1/2 mt-1 px-2 whitespace-nowrap
@@ -93,7 +94,7 @@ $(document).ready(function () {
         $('#loreCounter').text(`${index + 1} / ${chapters.length}`);
         $('#lorePrev').prop('disabled', index === 0);
         $('#loreNext').prop('disabled', index === chapters.length - 1);
-        $modal.children().first().scrollTop(0);
+        $('#loreBodyWrap').scrollTop(0);
 
         $(`.map-flag[data-index="${index}"]`).attr('data-visited', 'true');
 
@@ -128,5 +129,60 @@ $(document).ready(function () {
             const y = ((e.clientY - r.top) / r.height * 100).toFixed(1);
             console.log(`x: ${x}, y: ${y}`);
         });
+    }
+
+    // ===== Loading map & animasi masuk =====
+    function animateIn(el, anim, delay) {
+        el.style.animationDelay = delay + 'ms';
+        el.classList.remove('invisible');
+        el.classList.add('animate__animated', anim);
+        el.addEventListener('animationend', function () {
+            el.classList.remove('animate__animated', anim);
+            el.style.animationDelay = '';
+        }, { once: true });
+    }
+
+    function revealMapUI() {
+        // judul, tombol Profile, jalur
+        document.querySelectorAll('[data-map-ui]').forEach(function (el) {
+            animateIn(el, el.dataset.mapUi, Number(el.dataset.delay || 0));
+        });
+
+        // bendera muncul satu per satu setelah elemen lain
+        document.querySelectorAll('.map-flag').forEach(function (el, i) {
+            animateIn(el, 'animate__fadeInDown', 700 + i * 250);
+        });
+    }
+
+    const mapImg = document.querySelector('#mapBg img');
+    const mapBg = document.getElementById('mapBg');
+    let revealed = false;
+
+    const placeholder = document.getElementById('mapPlaceholder');
+
+    function onMapReady() {
+        if (revealed) return;
+        revealed = true;
+        mapBg.classList.add('loaded'); // fade-in peta asli, lalu placeholder memudar
+        revealMapUI();
+
+        // Lepas placeholder dari DOM setelah selesai memudar
+        let removed = false;
+        const done = function () {
+            if (removed) return;
+            removed = true;
+            placeholder.remove();
+        };
+        placeholder.addEventListener('transitionend', function (e) {
+            if (e.propertyName === 'opacity') done();
+        }, { once: true });
+        setTimeout(done, 1500); // cadangan
+    }
+
+    if (mapImg.complete && mapImg.naturalWidth > 0) {
+        onMapReady();
+    } else {
+        mapImg.addEventListener('load', onMapReady);
+        mapImg.addEventListener('error', onMapReady); // jangan sampai UI tersembunyi selamanya
     }
 });

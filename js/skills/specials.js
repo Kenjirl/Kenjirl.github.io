@@ -44,15 +44,15 @@ $(document).ready(function() {
 
     specials.forEach(function(skill) {
         $('#special').append(`
-            <div class="w-full mb-2 md:mb-8 last:mb-0 p-2 flex items-center justify-center gap-4 bg-cst-cream border-[3px] border-cst-black rounded-lg outline-none
+            <div class="w-full last:mb-0 p-2 flex items-center justify-center gap-4 bg-cst-cream border-[3px] border-cst-black rounded-lg outline-hidden
                 hover:bg-cst-black hover:text-cst-cream hover:border-cst-cream hover:-translate-y-2 hover:shadow-up-black
                 focus:bg-cst-black focus:text-cst-cream focus:border-cst-cream focus:-translate-y-2 focus:shadow-up-black
                 transition-all group" tabindex="0">
                 <img class="group-hover:hidden group-focus:hidden"
-                    height="60" width="60" src="https://cdn.simpleicons.org/${skill.tag}/3b383e" />
+                    height="30" width="30" src="https://cdn.simpleicons.org/${skill.tag}/3b383e" />
                 <img class="hidden group-hover:block group-hover:drop-shadow-[0_0_5px_rgba(${skill.rgba})] 
                     group-focus:block group-focus:drop-shadow-[0_0_5px_rgba(${skill.rgba})] transition-all"
-                    height="60" width="60" src="https://cdn.simpleicons.org/${skill.tag}/${skill.hex}" />
+                    height="30" width="30" src="https://cdn.simpleicons.org/${skill.tag}/${skill.hex}" />
                 <div class="flex-1 w-full flex flex-col items-start justify-between">
                     <div class="w-full flex">
                         <p class="w-full font-semibold">${skill.title}</p>

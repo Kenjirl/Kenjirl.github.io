@@ -246,7 +246,7 @@ $(document).ready(function() {
 
 		$('#questButtonsContainer').append(`
 			<div>
-				<button class="relative w-full flex items-center justify-center gap-2 mx-auto rounded bg-cst-cream border-[2px] border-cst-black text-cst-black shadow-up-cream outline-none brightness-75
+				<button class="relative w-full flex items-center justify-center gap-2 mx-auto rounded bg-cst-cream border-2 border-cst-black text-cst-black shadow-up-cream outline-hidden brightness-75
 					hover:brightness-100 focus:brightness-100
 					active:shadow-down-cream active:translate-y-2 
 					transition-all group quest-button"
@@ -270,12 +270,12 @@ $(document).ready(function() {
 	function toggleQuestContainerStatus(status) {
 		if (status === 'open') {
 			$('#questListContainer')
-				.removeClass(['-right-[100%]'])
-				.addClass(['-right-0']);
+				.removeClass(['-right-full'])
+				.addClass(['right-0']);
 		} else {
 			$('#questListContainer')
-				.removeClass(['-right-0'])
-				.addClass(['-right-[100%]']);
+				.removeClass(['right-0'])
+				.addClass(['-right-full']);
 		}
 	};
 

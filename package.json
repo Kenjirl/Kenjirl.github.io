@@ -6,6 +6,7 @@
         "build": "tailwindcss -i ./input.css -o ./output.css --minify"
     },
     "devDependencies": {
-        "tailwindcss": "3.4.1"
+        "@tailwindcss/cli": "^4",
+        "tailwindcss": "^4"
     }
 }

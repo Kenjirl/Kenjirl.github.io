@@ -23,93 +23,69 @@
     <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
+    <link rel="preload" as="image" href="../img/map-small.jpg">
+
     <title>Kenji's Lore to Web Dev</title>
 </head>
 <body class="relative bg-cst-cream text-cst-black max-w-[2000px] mx-auto bg-[url('/img/dust-2.png')]">
-    <header class="relative w-full max-w-[2000px] p-4 font-macondo font-semibold border-b-2 border-cst-black z-10 transition-all header">
-        <nav class="w-full flex items-center justify-center gap-2 md:gap-8" 
-            id="navLinks">
-            <a class="w-fit px-2 py-1 rounded text-cst-black outline-none hover:bg-cst-black hover:text-cst-cream focus:bg-cst-black focus:text-cst-cream transition-all animate__animated animate__bounceIn"
-                href="/"
-                >Lore</a>
-            <a class="w-fit px-2 py-1 rounded text-cst-black outline-none hover:bg-cst-black hover:text-cst-cream focus:bg-cst-black focus:text-cst-cream transition-all animate__animated animate__bounceIn"
-                href="https://kencong.hashnode.dev" target="_blank"
-                >Blog</a>
-            <a class="w-fit px-2 py-1 rounded text-cst-black outline-none hover:bg-cst-black hover:text-cst-cream focus:bg-cst-black focus:text-cst-cream transition-all animate__animated animate__bounceIn"
-                href="https://drive.google.com/file/d/1_vJ8IRuzT1srct-tKH0yKAagEJLXV7qR/view?usp=drive_link" target="_blank"
-                >CV</a>
-        </nav>
-    </header>
 
     <!-- Home/Introduce/Lore -->
-    <section class="w-full px-4 py-4 font-macondo section" id="lore">
-        <div class="relative w-full max-w-[1400px] mx-auto"
-            id="loreMap">
-            <div class="absolute top-2 left-0 w-full md:pt-4 z-10">
-                <h1 class="w-fit p-4 mx-auto text-center mb-2 font-bold text-xl md:text-3xl lg:text-4xl text-shadow-lg text-shadow-slate-900">
+    <section class="relative w-full px-4 py-4 font-macondo section" id="lore">
+        <div class="relative w-full max-w-[1400px] mx-auto z-10">
+
+            <!-- Title (mobile/tablet: di atas peta, lg+: menimpa peta) -->
+            <div class="invisible relative w-full lg:absolute lg:top-4 lg:left-0 lg:pt-4 z-10"
+                data-map-ui="animate__fadeInDown" data-delay="0">
+                <h1 class="w-fit px-2 pt-4 pb-4 lg:p-4 mx-auto text-center lg:mb-2 font-bold text-2xl md:text-3xl lg:text-4xl text-shadow-md text-shadow-cst-cream">
                     My Lore to Web Development</h1>
             </div>
 
-            <img class="block w-full h-auto select-none brightness-[90%] drop-shadow-[0_4px_2px_rgba(0,0,0,1)]" src="../img/map.svg" alt="Map of my journey" draggable="false">
-            <svg class="absolute inset-0 w-full h-full pointer-events-none"
-                viewBox="0 0 100 100" preserveAspectRatio="none" id="lorePath"></svg>
+            <!-- Area peta: patokan posisi jalur & bendera (x/y dalam %) -->
+            <div class="relative w-full" id="loreMap">
+
+            <!-- Profile Button (pojok kanan atas peta) -->
+            <div class="invisible absolute top-[7%] right-[5%] lg:top-12 lg:right-12 w-fit z-10 flex items-center justify-end gap-2"
+                data-map-ui="animate__fadeInDown" data-delay="150">
+                <button class="px-2 whitespace-nowrap text-xs md:text-base lg:text-xl font-semibold leading-normal
+                        bg-cst-cream text-cst-black border-[1.5px] border-cst-black rounded
+                        hover:bg-cst-black hover:text-cst-cream focus-visible:bg-cst-black focus-visible:text-cst-cream
+                        outline-hidden transition-colors"
+                    id="openProfile" aria-haspopup="dialog" aria-controls="profileModal">
+                    Profile
+                </button>
+            </div>
+
+            <!-- Map: placeholder blur + image -->
+            <div class="group/map blurred-img relative w-full aspect-[1920/1088]"
+                id="mapBg">
+
+                <!-- Placeholder -->
+                <div class="absolute inset-0 bg-cover bg-center transition-opacity duration-400 ease-out
+                        group-[.loaded]/map:opacity-0 group-[.loaded]/map:delay-300"
+                    style="background-image: url('../img/map-small.jpg');"
+                    id="mapPlaceholder"></div>
+
+                <!-- Peta asli -->
+                <img class="relative block w-full h-full brightness-90 drop-shadow-[0_4px_2px_rgba(0,0,0,1)] select-none"
+                    src="../img/map.svg" alt="Map of my journey" draggable="false" fetchpriority="high">
+            </div>
+
+            <!-- Path -->
+            <svg class="invisible absolute inset-0 w-full h-full pointer-events-none"
+                viewBox="0 0 100 100" preserveAspectRatio="none" id="lorePath"
+                data-map-ui="animate__fadeIn" data-delay="500"></svg>
+
             <div id="mapFlags"></div>
-        </div>
-
-        <!-- Foto profil -->
-        <div class="relative w-full max-w-[400px] mx-auto mt-8 pt-4 bg-cst-black rounded-3xl">
-            <img class="h-[40vh] max-h-[400px] object-contain mx-auto" src="../img/me-1.png" alt="Me">
-            <span class="block w-full pb-1 text-center text-lg uppercase text-cst-cream">Benedict Kenjiro Lehot</span>
-        </div>
-    </section>
-
-    <!-- CV -->
-    <section class="w-full mt-6 md:mt-0 flex flex-wrap items-center justify-center gap-2 font-macondo"
-        id="cv">
-        <a class="relative w-[150px] p-2 flex items-center justify-center gap-2 rounded-md font-semibold bg-cst-black text-cst-cream border border-cst-black
-            hover:bg-cst-cream hover:text-cst-black focus:bg-cst-cream focus:text-cst-black transition-colors"
-            href="https://drive.google.com/file/d/1_vJ8IRuzT1srct-tKH0yKAagEJLXV7qR/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
-            <div class="absolute left-2">
-                <i class="fa-regular fa-file-pdf"></i> 
-            </div>
-            CV
-        </a>
-    </section>
-
-    <!-- About/Skills/Expertise/Abilities -->
-    <section class="relative w-full px-4 py-8 md:p-8 font-macondo section"
-        id="abilities">
-        <h2 class="w-full text-center mb-2 md:mb-8 font-bold text-xl md:text-3xl lg:text-4xl uppercase">
-            ABILITIES</h2>
-
-        <div class="w-full max-w-[600px] lg:max-w-[1200px] mx-auto mb-16 grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <!-- Basic -->
-            <div class="w-full" id="basic">
-                <span class="block w-full mb-2 md:mb-8 text-center uppercase text-lg md:text-2xl lg:text-3xl">
-                    BASIC</span>
-
-                <!-- Content from skills/basics.js -->
             </div>
 
-            <!-- Library/Framework -->
-            <div class="w-full" id="special">
-                <span class="block w-full mb-2 md:mb-8 text-center uppercase text-lg md:text-2xl lg:text-3xl">
-                    SPECIAL</span>
-
-                <!-- Content from skills/specials.js -->
-            </div>
-
-            <!-- Additional -->
-            <div class="w-full" id="additional">
-                <span class="block w-full mb-2 md:mb-8 text-center uppercase text-lg md:text-2xl lg:text-3xl">
-                    ADDITIONAL</span>
-
-                <!-- Content from skills/additionals.js -->
-            </div>
+            <!-- Petunjuk (mobile/tablet; di desktop nama tempat muncul saat hover) -->
+            <p class="invisible lg:hidden mt-3 text-center text-sm opacity-80"
+                data-map-ui="animate__fadeIn" data-delay="1500">
+                Tap a flag to read each chapter</p>
         </div>
 
         <!-- Squares Atribute -->
-        <div class="absolute bottom-0 left-0 w-[20%] lg:w-[12%] grid grid-cols-5" 
+        <div class="absolute bottom-0 left-0 w-[20%] lg:w-[12%] grid grid-cols-5 z-0"
             id="squareSkill"></div>
     </section>
 
@@ -127,8 +103,8 @@
 
         <div class="relative w-full max-w-[1200px] mx-auto flex items-start justify-center gap-8">
             <!-- LEFT -->
-            <div class="fixed top-0 -right-[100%] w-full h-screen py-24 px-8 bg-cst-black bg-[url('/img/dust-2.png')]
-                lg:relative lg:-right-0 lg:h-fit lg:max-h-[500px] lg:flex-1 lg:p-2 lg:bg-transparent lg:bg-none
+            <div class="fixed top-0 -right-full w-full h-screen py-24 px-8 bg-cst-black bg-[url('/img/dust-2.png')]
+                lg:relative lg:right-0 lg:h-fit lg:max-h-[500px] lg:flex-1 lg:p-2 lg:bg-transparent lg:bg-none
                 overflow-y-scroll z-30 transition-all ease-linear duration-500"
                 id="questListContainer">
 
@@ -149,7 +125,7 @@
             <!-- RIGHT -->
             <div class="flex-1 w-full p-1 md:p-2 rounded-lg bg-cst-cream text-cst-black z-10"
                 id="questDetailContainer">
-                <img class="w-full aspect-video object-center rounded-sm md:rounded bg-cst-black"
+                <img class="w-full aspect-video object-center rounded-xs md:rounded-sm bg-cst-black"
                     src="#" alt="no image found" id="questImage">
 
                 <div class="relative w-full max-h-[500px] px-2 md:px-4 py-2 mb-2 text-sm md:text-base overflow-y-scroll">
@@ -197,7 +173,7 @@
                             </p>
                         </div>
 
-                        <a class="absolute bottom-2 right-2 md:bottom-4 md:right-4 w-fit px-2 md:text-lg text-center font-semibold -rotate-12 rounded outline-none
+                        <a class="absolute bottom-2 right-2 md:bottom-4 md:right-4 w-fit px-2 md:text-lg text-center font-semibold -rotate-12 rounded outline-hidden
                             hover:bg-cst-black hover:text-cst-cream hover:rotate-0
                             focus:bg-cst-black focus:text-cst-cream focus:rotate-0
                             transition-all"
@@ -209,12 +185,12 @@
 
                 <div class="w-full flex items-end justify-center gap-1 text-cst-cream">
                     <div class="flex-1">
-                        <button class="w-full p-1 bg-cst-black rounded-sm rounded-bl-lg"
+                        <button class="w-full p-1 bg-cst-black rounded-xs rounded-bl-lg"
                             id="questPrevButton">
                             Prev</button>
                     </div>
                     <div class="flex-1">
-                        <button class="w-full p-1 bg-cst-black rounded-sm rounded-br-lg"
+                        <button class="w-full p-1 bg-cst-black rounded-xs rounded-br-lg"
                             id="questNextButton" data-id="1">
                             Next</button>
                     </div>
@@ -258,18 +234,18 @@
                     <div class="hidden w-full mb-4 lg:flex flex-col gap-2">
                         <label class="w-full font-semibold"
                             for="name">Name</label>
-                        <input class="w-full rounded p-2 border-2 border-cst-black bg-transparent focus:bg-cst-cream outline-none transition-colors"
+                        <input class="w-full rounded-sm p-2 border-2 border-cst-black bg-transparent focus:bg-cst-cream outline-hidden transition-colors"
                             type="text" id="name" name="name">
                     </div>
 
                     <div class="hidden w-full mb-4 lg:flex flex-col gap-2">
                         <label class="w-full font-semibold"
                             for="message">Message</label>
-                        <textarea class="w-full rounded p-2 border-2 border-cst-black bg-transparent focus:bg-cst-cream outline-none transition-colors text-justify resize-none"
+                        <textarea class="w-full rounded-sm p-2 border-2 border-cst-black bg-transparent focus:bg-cst-cream outline-hidden transition-colors text-justify resize-none"
                             name="message" id="message" rows="5"></textarea>
                     </div>
 
-                    <button class="w-full p-2 rounded bg-cst-black text-cst-cream border-2 border-cst-black font-semibold outline-none
+                    <button class="w-full p-2 rounded bg-cst-black text-cst-cream border-2 border-cst-black font-semibold outline-hidden
                         hover:bg-transparent hover:text-cst-black
                         focus:bg-transparent focus:text-cst-black
                         active:bg-cst-black active:text-cst-cream
@@ -289,52 +265,13 @@
         <p>My Lore to Web Development</p>
     </footer>
 
-    <!-- Lore Modal -->
-    <div class="group/modal fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/75
-            invisible opacity-0 transition-all duration-300
-            aria-[hidden=false]:visible aria-[hidden=false]:opacity-100"
-        id="loreModal" aria-hidden="true">
-
-        <div class="relative w-full max-w-[820px] max-h-[88vh] overflow-y-auto px-6 md:px-10 pt-8 pb-6
-                bg-cst-cream bg-[url('/img/dust-2.png')] text-cst-black font-macondo
-                border-4 border-double border-cst-black rounded-xl
-                translate-y-5 scale-95 transition-transform duration-300
-                group-aria-[hidden=false]/modal:translate-y-0 group-aria-[hidden=false]/modal:scale-100"
-            role="dialog" aria-modal="true" aria-labelledby="loreTitle">
-
-            <button class="absolute top-2 right-4 text-3xl leading-none hover:rotate-90 focus:rotate-90 outline-none transition-transform"
-                id="loreClose" aria-label="Close">&times;</button>
-
-            <p class="text-center text-xs md:text-sm uppercase tracking-[0.15em] opacity-70" id="loreChapter"></p>
-            <h3 class="mt-1 mb-4 text-center font-bold text-2xl md:text-4xl" id="loreTitle"></h3>
-
-            <div class="space-y-4" id="loreBody"></div>
-
-            <div class="mt-6 flex items-center justify-between">
-                <button class="px-4 py-1 rounded border-2 border-cst-black bg-cst-black text-cst-cream
-                        hover:bg-transparent hover:text-cst-black focus:bg-transparent focus:text-cst-black outline-none
-                        disabled:opacity-30 disabled:pointer-events-none transition-all"
-                    id="lorePrev">&larr; Prev</button>
-                <span class="text-sm md:text-base" id="loreCounter"></span>
-                <button class="px-4 py-1 rounded border-2 border-cst-black bg-cst-black text-cst-cream
-                        hover:bg-transparent hover:text-cst-black focus:bg-transparent focus:text-cst-black outline-none
-                        disabled:opacity-30 disabled:pointer-events-none transition-all"
-                    id="loreNext">Next &rarr;</button>
-            </div>
-        </div>
-    </div>
+    <!-- Components -->
+    <div data-component="components/lore-modal.html"></div>
+    <div data-component="components/profile-modal.html"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="./js/nav.js"></script>
-    <script src="./js/lore.js"></script>
-    <script src="./js/skills/basics.js"></script>
-    <script src="./js/skills/specials.js"></script>
-    <script src="./js/skills/additionals.js"></script>
-    <script src="./js/quests.js"></script>
-    <script src="./js/achievement.js"></script>
-    <script src="./js/summon.js"></script>
-    <script src="./js/squares.js"></script>
+    <script src="./js/components.js"></script>
     <script src="./js/script.js"></script>
 </body>
 </html>

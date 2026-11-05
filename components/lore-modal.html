@@ -1,0 +1,47 @@
+<!-- Lore Modal -->
+<div class="group/modal fixed inset-0 z-100 flex items-center justify-center p-4 bg-black/75
+        invisible opacity-0 transition-all duration-300
+        aria-[hidden=false]:visible aria-[hidden=false]:opacity-100"
+    id="loreModal" aria-hidden="true">
+
+    <div class="relative flex flex-col w-full max-w-[820px] max-h-[88dvh] md:h-[88vh] px-5 md:px-10 pt-8 pb-5 md:pb-6
+            bg-cst-cream bg-[url('/img/dust-2.png')] text-cst-black font-macondo
+            border-4 border-double border-cst-black rounded-xl
+            translate-y-5 scale-95 transition-transform duration-300
+            group-aria-[hidden=false]/modal:translate-y-0 group-aria-[hidden=false]/modal:scale-100"
+        role="dialog" aria-modal="true" aria-labelledby="loreTitle">
+
+        <button class="absolute top-2 right-2 text-3xl leading-none hover:rotate-90 focus:rotate-90 outline-hidden transition-transform"
+            id="loreClose" aria-label="Close">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <!-- Header -->
+        <div class="shrink-0">
+            <p class="text-center text-xs md:text-sm uppercase tracking-[0.15em] opacity-70" id="loreChapter"></p>
+            <h3 class="mt-1 text-center font-bold text-2xl md:text-4xl" id="loreTitle"></h3>
+        </div>
+
+        <!-- Body -->
+        <div class="flex-1 min-h-0 my-4 overflow-y-auto flex flex-col" id="loreBodyWrap">
+            <div class="my-auto space-y-4" id="loreBody"></div>
+        </div>
+
+        <!-- Footer -->
+        <div class="shrink-0 flex items-center justify-between">
+            <button class="px-4 py-1 flex items-center justify-start gap-2 rounded border-2 border-cst-black bg-cst-black text-cst-cream
+                    hover:bg-transparent hover:text-cst-black focus:bg-transparent focus:text-cst-black outline-hidden
+                    disabled:opacity-30 disabled:pointer-events-none transition-all"
+                id="lorePrev">
+                <i class="fa-solid fa-chevron-left"></i>Previous
+            </button>
+            <span class="text-sm md:text-base" id="loreCounter"></span>
+            <button class="px-4 py-1 flex items-center justify-end gap-2 rounded border-2 border-cst-black bg-cst-black text-cst-cream
+                    hover:bg-transparent hover:text-cst-black focus:bg-transparent focus:text-cst-black outline-hidden
+                    disabled:opacity-30 disabled:pointer-events-none transition-all"
+                id="loreNext">
+                Next<i class="fa-solid fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+</div>

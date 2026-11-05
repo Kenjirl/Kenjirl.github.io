@@ -1,0 +1,91 @@
+<!-- Profile Modal -->
+<div class="group/pmodal fixed inset-0 z-100 flex items-center justify-center p-4 bg-black/75
+        invisible opacity-0 transition-all duration-300
+        aria-[hidden=false]:visible aria-[hidden=false]:opacity-100"
+    id="profileModal" aria-hidden="true">
+
+    <div class="relative w-full max-w-[1200px] h-[90dvh]
+            translate-y-5 scale-95 transition-transform duration-300
+            group-aria-[hidden=false]/pmodal:translate-y-0 group-aria-[hidden=false]/pmodal:scale-100">
+
+        <!-- Close Button -->
+        <button class="absolute top-2 right-2 z-20 w-9 h-9 flex items-center justify-center
+                text-2xl leading-none rounded-full bg-cst-cream text-cst-black border-2 border-cst-black
+                hover:rotate-90 focus-visible:rotate-90 outline-hidden transition-transform"
+            id="profileClose" aria-label="Close">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <!-- Panel -->
+        <div class="h-full overflow-y-auto lg:overflow-hidden
+                lg:grid lg:grid-cols-[minmax(0,2fr)_minmax(0,8fr)] lg:grid-rows-1
+                bg-cst-cream bg-[url('/img/dust-2.png')] text-cst-black font-macondo
+                border-4 border-double border-cst-black rounded-xl"
+            role="dialog" aria-modal="true" aria-labelledby="profileTitle">
+
+            <!-- Profil -->
+            <div class="p-4 pt-8 flex flex-col items-center justify-center bg-cst-black rounded-t-lg lg:h-full lg:pt-4 lg:min-h-0 lg:rounded-none lg:rounded-s-lg">
+                <img class="w-full max-w-[180px] md:max-w-[240px] mx-auto aspect-[591/762] object-contain object-bottom
+                        lg:max-w-none lg:aspect-auto lg:min-h-0"
+                    src="../img/me-1.png" alt="Me">
+                <span class="block w-full py-1 text-center uppercase text-cst-cream">
+                    Benedict Kenjiro Lehot</span>
+                <div class="w-full max-w-[400px] grid grid-cols-2 lg:grid-cols-1 lg:max-w-none items-center justify-center gap-2">
+                    <a class="relative w-full p-2 flex items-center justify-center gap-2 rounded-md font-semibold bg-cst-black text-cst-cream border border-cst-cream
+                        hover:bg-cst-cream hover:text-cst-black focus:bg-cst-cream focus:text-cst-black transition-colors"
+                        href="https://drive.google.com/file/d/1_vJ8IRuzT1srct-tKH0yKAagEJLXV7qR/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+                        <div class="absolute left-2">
+                            <i class="fa-regular fa-file-pdf"></i> 
+                        </div>
+                        CV
+                    </a>
+                    <a class="relative w-full p-2 flex items-center justify-center gap-2 rounded-md font-semibold bg-cst-black text-cst-cream border border-cst-cream
+                        hover:bg-cst-cream hover:text-cst-black focus:bg-cst-cream focus:text-cst-black transition-colors"
+                        href="https://kencong.hashnode.dev" target="_blank" rel="noopener noreferrer">
+                        <div class="absolute left-2">
+                            <i class="fa-brands fa-hashnode"></i>
+                        </div>
+                        Blog
+                    </a>
+                </div>
+            </div>
+
+            <!-- Skills -->
+            <div class="relative lg:min-h-0">
+                <div class="relative z-10 p-4 lg:h-full lg:overflow-y-auto">
+                    <h2 class="w-full text-center mb-4 md:mb-8 font-bold text-xl md:text-3xl lg:text-4xl uppercase"
+                        id="profileTitle">ABILITIES</h2>
+
+                    <div class="w-full grid grid-cols-1 gap-8">
+                        <div class="w-full">
+                            <span class="block w-full mb-2 md:mb-4 text-center uppercase text-lg md:text-xl">
+                                BASIC</span>
+                            <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-2"
+                                id="basic">
+                                <!-- Content from skills/basics.js -->
+                            </div>
+                        </div>
+
+                        <div class="w-full">
+                            <span class="block w-full mb-2 md:mb-4 text-center uppercase text-lg md:text-2xl">
+                                SPECIAL</span>
+                            <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-2"
+                                id="special">
+                                <!-- Content from skills/specials.js -->
+                            </div>
+                        </div>
+
+                        <div class="w-full">
+                            <span class="block w-full mb-2 md:mb-4 text-center uppercase text-lg md:text-2xl">
+                                ADDITIONAL</span>
+                            <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-2"
+                                id="additional">
+                                <!-- Content from skills/additionals.js -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
