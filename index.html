@@ -18,10 +18,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="../img/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon/favicon-16x16.png">
+    <link rel="icon" href="./img/favicon/favicon.ico" sizes="any">
+    <link rel="manifest" href="./img/favicon/site.webmanifest">
 
     <link rel="preload" as="image" href="../img/map-small.jpg">
 
@@ -130,41 +131,33 @@
             <!-- RIGHT -->
             <div class="flex-1 w-full p-1 md:p-2 rounded-lg bg-cst-cream text-cst-black z-10"
                 id="questDetailContainer">
-                <img class="w-full aspect-video object-center rounded-xs md:rounded-sm bg-cst-black"
-                    src="#" alt="no image found" id="questImage">
+                <div class="relative w-full aspect-video overflow-hidden rounded-xs md:rounded-sm bg-cst-black">
+                    <!-- Placeholder blur (img/portfolio/small), diisi js/quests.js -->
+                    <div class="absolute inset-0 bg-cover bg-center blur-md scale-110"
+                        id="questImagePlaceholder"></div>
+                    <img class="relative block w-full h-full object-center opacity-0 transition-opacity duration-300"
+                        alt="" id="questImage">
+                </div>
 
                 <div class="relative w-full max-h-[500px] px-2 md:px-4 py-2 mb-2 text-sm md:text-base overflow-y-scroll">
-                    <span class="font-bold text-2xl" id="questTitle">
-                        Ruteng
-                    </span>
-                    <p class="w-full my-2 indent-4 text-justify" id="questStory">
-                        My Final Project is to create a website as a graduation requirement for the "Basic JavaScript Programming" class at Dicoding. I have chosen a topic about my hometown. 
-                    </p>
+                    <span class="font-bold text-2xl" id="questTitle"></span>
+                    <p class="w-full my-2 indent-4 text-justify" id="questStory"></p>
                     <div class="w-full grid grid-cols-1 md:grid-cols-2 items-start gap-4">
                         <div class="w-full">
                             <div class="w-full">
-                                <p class="font-semibold" id="questNumber">
-                                    #1
-                                </p>
+                                <p class="font-semibold" id="questNumber"></p>
                                 <p>
                                     Difficulty : 
-                                    <span class="text-green-500" id="questDifficulty">
-                                        Novice
-                                    </span>
+                                    <span id="questDifficulty"></span>
                                 </p>
                                 <div>
                                     <p><b>Missions</b> :</p>
-                                    <ul class="list-disc w-full pl-4" id="questMission">
-                                        <li>Creating a website by applying semantic concepts.</li>
-                                        <li>Displaying personal identity using float in the aside section.</li>
-                                    </ul>
+                                    <ul class="list-disc w-full pl-4" id="questMission"></ul>
                                 </div>
                             </div>
                             <div class="mt-2">
                                 <p><b>Technologies</b> :</p>
-                                <ul class="list-disc w-full pl-4" id="questTechnology">
-                                    <li>HTML, CSS, JavaScript</li>
-                                </ul>
+                                <ul class="list-disc w-full pl-4" id="questTechnology"></ul>
                             </div>
                         </div>
 
@@ -173,8 +166,8 @@
                                 <b class="text-lg">
                                     Quest Complete 
                                 </b> <br>
-                                Exp. gained : +<span id="questExp">100</span> <br>
-                                Last saved : <span id="questLastSaved">2022</span>
+                                Exp. gained : +<span id="questExp"></span> <br>
+                                Last saved : <span id="questLastSaved"></span>
                             </p>
                         </div>
 
@@ -182,7 +175,7 @@
                             hover:bg-cst-black hover:text-cst-cream hover:rotate-0
                             focus:bg-cst-black focus:text-cst-cream focus:rotate-0
                             transition-all"
-                            href="https://kenjirl.github.io/halaman-profil-Ruteng/" target="_blank" id="questUrl">
+                            href="#" target="_blank" rel="noopener noreferrer" id="questUrl">
                             Load <br>Checkpoint
                         </a>
                     </div>
@@ -218,7 +211,7 @@
         <h2 class="w-full text-center mb-8 font-bold text-xl md:text-3xl lg:text-4xl uppercase">
             ACHIEVEMENTS</h2>
 
-        <div class="w-full max-w-[80%] lg:max-w-[1200px] mx-auto px-2 md:px-4 pb-2 grid grid-rows-3 grid-flow-col text-sm lg:text-base gap-4 text-center text-cst-cream overflow-x-auto snap-x"
+        <div class="w-full max-w-[80%] lg:max-w-[min(1200px,90%)] mx-auto px-2 md:px-4 pb-2 grid grid-rows-3 grid-flow-col text-sm lg:text-base gap-4 text-center text-cst-cream overflow-x-auto snap-x"
             id="achievementContainer"></div>
 
         <!-- Squares Atribute -->
@@ -232,7 +225,7 @@
         <h2 class="w-full text-center mb-8 font-bold text-xl md:text-3xl lg:text-4xl uppercase">
             SUMMON ME</h2>
 
-        <div class="w-full px-8 md:px-0 flex flex-col-reverse lg:flex-row items-center justify-center gap-16">
+        <div class="w-full px-8 xl:px-0 flex flex-col-reverse lg:flex-row items-center justify-center gap-16">
             <div class="flex-1 w-full max-w-[400px] lg:max-w-[600px] mx-auto">
                 <form class="w-full mx-auto" 
                     action="#" method="post">

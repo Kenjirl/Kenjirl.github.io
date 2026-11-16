@@ -52,14 +52,14 @@ $(document).ready(function() {
             if (value === 0) {
                 square.append(`
                     <a class="w-full aspect-square flex items-center justify-center outline-hidden text-xl lg:text-5xl bg-cst-black text-cst-black hover:bg-cst-cream focus:bg-cst-cream transition-all"
-                        href="${summons[k].url}" target="_blank" id="summonUrl-${index}">
+                        href="${summons[k].url}" target="_blank" rel="noopener noreferrer" id="summonUrl-${index}">
                         <i class="fa-brands fa-${summons[k].icon}"></i>
                     </a>
                 `);
             } else {
                 square.append(`
                     <a class="w-full aspect-square flex items-center justify-center outline-hidden text-xl lg:text-5xl bg-transparent text-cst-cream hover:bg-cst-black focus:bg-cst-black transition-all"
-                        href="${summons[k].url}" target="_blank" id="summonUrl-${index}">
+                        href="${summons[k].url}" target="_blank" rel="noopener noreferrer" id="summonUrl-${index}">
                         <i class="fa-brands fa-${summons[k].icon}"></i>
                     </a>
                 `);

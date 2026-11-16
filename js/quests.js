@@ -228,6 +228,18 @@ $(document).ready(function() {
 			url: 'https://kenjirl.github.io/rapid-serial-visual-presentation/',
 			tech: ['HTML, CSS, TailwindCSS, JavaScript', 'Tesseract.js']
 		},
+		{
+			title: 'Portfolio during Academy',
+			detail: "A portfolio site for the apps I built as a learner at Apple Developer Academy in 2026. I made a separate portfolio for this because it's mostly ios apps. ",
+			missions: [
+				'Work individually and with team to complete Challenges',
+				'Each Challenge has different requirements, objectives, and constraints',
+			],
+			exp: 1000,
+			lastSaved: 2026,
+			url: 'https://kenjirl.github.io/apple-academy/',
+			tech: ['Astro, TailwindCSS, TypeScript']
+		},
 	];
 
 	quests.reverse().forEach(function(quest, index) {
@@ -287,6 +299,23 @@ $(document).ready(function() {
 		toggleQuestContainerStatus('open')
 	});
 
+	const questImage = document.getElementById('questImage');
+	const questImagePlaceholder = document.getElementById('questImagePlaceholder');
+
+	function revealQuestImage() {
+		if (questImage.naturalWidth > 0) questImage.classList.add('opacity-100');
+	}
+	questImage.addEventListener('load', revealQuestImage);
+
+	function showQuestImage(num, title) {
+		const src = `./img/portfolio/${num}.jpg`;
+		questImagePlaceholder.style.backgroundImage = `url('./img/portfolio/small/${num}.jpg')`;
+		questImage.classList.remove('opacity-100');
+		questImage.alt = `Screenshot of ${title}`;
+		questImage.src = src;
+		if (questImage.complete) revealQuestImage();
+	}
+
 	$('.quest-button').click(function () {
 		let id = parseInt($(this).attr('id').replace('questButton-', ''));
 		let quest = quests[id];
@@ -299,7 +328,7 @@ $(document).ready(function() {
 			.addClass('translate-y-2 bg-cst-black text-cst-cream border-cst-cream shadow-down-cream brightness-100')
 			.removeClass('bg-cst-cream text-cst-black border-cst-black shadow-up-cream brightness-75');
 
-		$('#questImage').attr("src", `../img/portfolio/${quests.length-id}.jpg`).attr("alt", `Quest ${id+1}`);
+		showQuestImage(quests.length - id, quest.title);
 		$('#questTitle').text(quest.title);
 		$('#questStory').text(quest.detail);
 		$('#questNumber').text(`#${id+1}`);
